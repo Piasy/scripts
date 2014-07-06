@@ -1,0 +1,3 @@
+#!/bin/bash
+EXCLUDE_FILE=$HOME/.ssh/sshuttle.exclude-from
+sshuttle --dns -r piasy@192.157.233.187 0/0 -v --exclude-from=$EXCLUDE_FILE

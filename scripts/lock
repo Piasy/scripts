@@ -1,0 +1,2 @@
+source /home/piasy/.xinitrc
+xscreensaver-command --lock

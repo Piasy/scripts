@@ -1,0 +1,2 @@
+sudo ifconfig wlp3s0 up
+sudo iw wlp3s0 connect Tsinghua
