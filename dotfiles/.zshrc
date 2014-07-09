@@ -131,17 +131,11 @@ alias tmux='tmux -2'
 source /etc/environment
 # echo "~/.zshrc executed."
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.npm/local/bin
-PATH=$HOME/software/android-ndk-r8e:$PATH
-PATH=$HOME/software/go/bin:$PATH
-PATH=$HOME/software/arm-eabi-4.4.3/bin:$HOME/software/arm-linux-androideabi-4.6/bin:$PATH
-PATH=$HOME/software/adt-bundle-linux-x86-20131030/sdk/tools:$PATH
 
-export GOROOT
-GOROOT=$HOME/software/go
-export GOPATH
-GOPATH=$HOME/Src/gocode
+#export GOROOT
+#GOROOT=$HOME/software/go
+#export GOPATH
+#GOPATH=$HOME/Src/gocode
 
 export PATH
 [ -d $HOME/bin ] && PATH=$HOME/bin:$PATH
