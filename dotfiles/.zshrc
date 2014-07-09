@@ -125,6 +125,7 @@ export PATH
 alias mr='make run'
 alias m='make'
 alias mg='make gdb'
+alias ll='ls -alhF'
 #alias rm='rm -i'
 #unalias rm
 alias tmux='tmux -2'
