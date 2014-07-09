@@ -1,136 +1,159 @@
-set nocompatible    " be iMproved
-filetype off        " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-" vim-scripts repos
-filetype plugin indent on    " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"------------------
-" Code Completions
-"------------------
-" Bundle 'Valloric/YouCompleteMe'
-" Bundle 'Shougo/neocomplcache'
-Bundle 'mattn/emmet-vim'
-" Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
-" snippets
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'mattn/emmet-vim'
+Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 "------ snipmate dependencies -------
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+
 
 "-----------------
 " Fast navigation
 "-----------------
-" Bundle 'tsaleh/vim-matchit'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
 "--------------
 " Fast editing
 "--------------
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'sjl/gundo.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'sjl/gundo.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 "--------------
 " IDE features
 "--------------
-" Bundle 'scrooloose/nerdtree'
-Bundle 'humiaozuzu/TabBar'
-Bundle 'majutsushi/tagbar'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
-Bundle 'bronson/vim-trailing-whitespace'
+Plugin 'humiaozuzu/TabBar'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'scrooloose/syntastic'
+Plugin 'bronson/vim-trailing-whitespace'
+
 
 "-------------
 " Other Utils
 "-------------
-" Bundle 'humiaozuzu/fcitx-status'
-Bundle 'nvie/vim-togglemouse'
+Plugin 'nvie/vim-togglemouse'
 
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
 "------- web backend ---------
-Bundle '2072/PHP-Indenting-for-VIm'
-"Bundle 'tpope/vim-rails'
-Bundle 'lepture/vim-jinja'
-"Bundle 'digitaltoad/vim-jade'
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'tpope/vim-rails'
+Plugin 'lepture/vim-jinja'
+Plugin 'digitaltoad/vim-jade'
 
 "------- web frontend ----------
-Bundle 'othree/html5.vim'
-" Bundle 'tpope/vim-haml'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nono/jquery.vim'
-" Bundle 'groenewege/vim-less'
-" Bundle 'wavded/vim-stylus'
-" Bundle 'nono/vim-handlebars'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'nono/jquery.vim'
+" Plugin 'groenewege/vim-less'
+" Plugin 'wavded/vim-stylus'
+" Plugin 'nono/vim-handlebars'
 
 "------- markup language -------
-Bundle 'tpope/vim-markdown'
-" Bundle 'timcharper/textile.vim'
+Plugin 'tpope/vim-markdown'
+" Plugin 'timcharper/textile.vim'
 
 "------- Ruby --------
-" Bundle 'tpope/vim-endwise'
+" Plugin 'tpope/vim-endwise'
 
 "------- Go ----------
-Bundle 'jnwhiteh/vim-golang'
+Plugin 'jnwhiteh/vim-golang'
 
 "------- FPs ------
-Bundle 'kien/rainbow_parentheses.vim'
-" Bundle 'wlangstroth/vim-racket'
-" Bundle 'vim-scripts/VimClojure'
-" Bundle 'rosstimson/scala-vim-support'
+Plugin 'kien/rainbow_parentheses.vim'
+" Plugin 'wlangstroth/vim-racket'
+" Plugin 'vim-scripts/VimClojure'
+" Plugin 'rosstimson/scala-vim-support'
 
 "--------------
 " Color Schemes
 "--------------
-Bundle 'rickharris/vim-blackboard'
-" Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/solarized'
-Bundle 'rickharris/vim-monokai'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'fisadev/fisa-vim-colorscheme'
+Plugin 'rickharris/vim-blackboard'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/solarized'
+Plugin 'rickharris/vim-monokai'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'fisadev/fisa-vim-colorscheme'
 
 
-" Bundle 'AutoClose'
+" Plugin 'AutoClose'
 
-Bundle 'ZenCoding.vim'
+Plugin 'ZenCoding.vim'
 
-Bundle 'matchit.zip'
+Plugin 'matchit.zip'
 
-Bundle 'ShowTrailingWhitespace'
+Plugin 'ShowTrailingWhitespace'
 
-Bundle '_jsbeautify'
-
-
-Bundle 'FencView.vim'
-
-Bundle 'The-NERD-tree'
-
-Bundle 'The-NERD-Commenter'
-
-Bundle 'UltiSnips'
+Plugin '_jsbeautify'
 
 
+Plugin 'FencView.vim'
 
-Bundle 'L9'
-Bundle 'vim-scripts/FuzzyFinder'
+Plugin 'The-NERD-tree'
 
-Bundle 'vim-scripts/taglist.vim'
+Plugin 'The-NERD-Commenter'
 
+Plugin 'UltiSnips'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+Plugin 'vim-scripts/FuzzyFinder'
+
+Plugin 'vim-scripts/taglist.vim'
+
+
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " enable syntax hightlight and completion
 syntax on
@@ -393,4 +416,3 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
-
