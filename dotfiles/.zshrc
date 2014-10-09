@@ -129,6 +129,7 @@ alias ll='ls -alhF'
 #alias rm='rm -i'
 #unalias rm
 alias tmux='tmux -2'
+alias astyleall="astyle --add-brackets --align-reference=type --align-pointer=type --break-blocks --delete-empty-lines --unpad-paren --pad-header --pad-oper -Y --indent=spaces=4 -xn -xc -xk -A2 --add-one-line-brackets --indent-switches -r '*.h' '*.cpp' '*.c'"
 source /etc/environment
 # echo "~/.zshrc executed."
 
