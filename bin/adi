@@ -1,0 +1,3 @@
+#!/bin/bash
+adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} install -r "$1" 
+

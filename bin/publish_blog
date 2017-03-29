@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd ~/src/Piasy.github.io/
+jekyll clean
+jekyll build
+rsync -ravz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress ./_site/ root@123.56.66.149:/data/piasy_blog
+
+cd ~/src/AdvancedRxJava/
+jekyll clean
+jekyll build
+rsync -ravz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress ./_site/ root@123.56.66.149:/data/piasy_blog/AdvancedRxJava

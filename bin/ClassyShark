@@ -1,0 +1,2 @@
+#!/bin/sh
+java -jar /Users/piasy/bin/ClassyShark-7.2.jar

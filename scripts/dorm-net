@@ -1,4 +1,0 @@
-sudo ifconfig enp2s0 up
-sudo ifconfig enp2s0 59.66.132.144 netmask 255.255.255.0
-sudo ip route add default via 59.66.132.1
-sudo resolvconf -a enp2s0 < /home/piasy/scripts/nameserver

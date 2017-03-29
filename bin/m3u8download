@@ -1,0 +1,16 @@
+#!/bin/bash
+source=$1
+output=$2
+if [[ -z "${source// }" ]]; then
+    echo "bad source url"
+    exit 1
+fi
+
+if [[ -z "${output// }" ]]; then
+    echo "bad output"
+    exit 1
+fi
+
+echo "download $source to $output"
+ffmpeg -i $1 -bsf:a aac_adtstoasc -vcodec copy -c copy -crf 50 $2
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$1" == "-l" ]
+then
+  adb shell bugreport > ~/Downloads/bugreport.txt
+  cd ~/Downloads
+  report="bugreport.txt"
+else
+  adb bugreport ~/Downloads/bugreport.zip
+  cd ~/Downloads
+  unzip bugreport.zip
+  report=`cat main_entry.txt`
+
+  rm $report version.txt main_entry.txt
+  rm -rf FS
+fi
+
+chkbugreport $report

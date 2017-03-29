@@ -1,8 +1,0 @@
-#!/bin/bash
-IP=59.66.132.142
-INTERFACE=sit1
-ip tunnel add $INTERFACE mode sit remote 59.66.4.50 local $IP
-ifconfig $INTERFACE up
-ifconfig $INTERFACE add 2001:da8:200:900e:0:5efe:$IP/64
-ip route add ::/0 via 2001:da8:200:900e::1 metric 1
-

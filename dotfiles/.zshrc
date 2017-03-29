@@ -5,7 +5,9 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gnzh"
+# //bira
+# //bureau
+ZSH_THEME="mikeh"
 #ZSH_THEME="tim"
 
 # Example aliases
@@ -30,7 +32,7 @@ ZSH_THEME="gnzh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git python vi-mode archlinux compleat python npm rvm mercurial zsh-syntax-highlighting)
+plugins=(git python vi-mode archlinux compleat python npm rvm mercurial zsh-syntax-highlighting git-flow-completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,7 +53,7 @@ export SAVEHIST=20000000
 #[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
 #[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
 #[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
-#[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search 
+#[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
 #[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 #[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 #[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
@@ -120,25 +122,63 @@ export NODE_PATH=$HOME/node_modules
 
 export EDITOR=vim
 export BROWSER=chromium
-export PATH
 
 alias mr='make run'
 alias m='make'
 alias mg='make gdb'
 alias ll='ls -alhF'
-#alias rm='rm -i'
-#unalias rm
 alias tmux='tmux -2'
 alias astyleall="astyle --add-brackets --align-reference=type --align-pointer=type --break-blocks --delete-empty-lines --unpad-paren --pad-header --pad-oper -Y --indent=spaces=4 -xn -xc -xk -A2 --add-one-line-brackets --indent-switches -r '*.h' '*.cpp' '*.c'"
-source /etc/environment
+#source /etc/environment
 # echo "~/.zshrc executed."
 
-
-#export GOROOT
-#GOROOT=$HOME/software/go
-#export GOPATH
-#GOPATH=$HOME/Src/gocode
-
-export PATH
-[ -d $HOME/bin ] && PATH=$HOME/bin:$PATH
+# set the number of open files to be 1024
+ulimit -S -n 1024
+export PATH="/usr/local/Cellar/curl/7.52.1/bin/:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/opt/X11/bin"
 export LC_ALL="en_US.UTF-8"
+export GOPATH=~/src/GOPATH
+alias mongostart="mongod --dbpath ~/data/mongodb"
+alias goprepare="export GOPATH=`pwd`:$GOPATH"
+export USERPROFILE=$HOME
+
+export NVM_DIR=~/.nvm
+export JAVA_HOME=`/usr/libexec/java_home`
+export ANDROID_HOME=/Users/piasy/tools/android-sdk
+export ANDROID_SDK=$ANDROID_HOME
+export ANDROID_NDK=$ANDROID_HOME/ndk-bundle
+export ANDROID_JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export GRADLE_USER_HOME=/Users/piasy/.gradle/
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/src/scripts/bin"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/usr/local/mysql/bin"
+export PATH="$PATH:/usr/local/Cellar/node/5.4.1/bin"
+export PATH="$PATH:$HOME/tools/apache-maven-3.3.9/bin"
+export PATH="$PATH:$HOME/tools/android-sdk/ndk-bundle"
+export PATH="$HOME/tools/depot_tools:$PATH"
+export PATH="/Users/piasy/anaconda3/bin:$PATH"
+export PATH="$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$PATH"
+export PATH=".:$PATH"
+
+alias ba="add && ./buckw install -r -x appDevDebug"
+alias bba="rm -rf .okbuck .buckd buck-out && ./gradlew okbuck --offline --stacktrace && ba"
+
+#alias for cnpm
+alias cnpm="npm3 --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
+alias fidea="docker run --rm -p 1017:1017 -e USER='Piasy' dominate/idea-license-server"
+alias fgfw="proxychains4 zsh"
+alias blog='jekyll serve'
+alias showHiddenFiles="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hiddenFiles="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+alias indexOn="sudo mdutil -a -i on"
+alias indexOff="sudo mdutil -a -i off"
+alias add="adb devices"
+export HOMEBREW_GITHUB_API_TOKEN="<TOKEN>"
+
+alias pull_log="adb pull /sdcard/powerinfo/pslstreaming_log.txt ~/Downloads && atom ~/Downloads/pslstreaming_log.txt"
+

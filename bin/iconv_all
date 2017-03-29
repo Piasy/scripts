@@ -1,0 +1,35 @@
+#!/bin/bash
+
+SRC_ENC=$1
+DST_ENC=$2
+SRC_DIR=$3
+DST_DIR=$4
+
+cd $SRC_DIR
+SRC_DIR_PATH=`pwd`
+
+recursiverm() {
+  for d in *; do
+    if [ -d "$d" ]; then
+      (cd -- "$d" && recursiverm)
+    fi
+    if ! [ -d "$d" ]; then
+      traverse $d
+    fi
+  done
+}
+
+traverse() {
+  file=$1
+  cwd=`pwd`
+  path="$cwd/$file"
+  echo "iconv $path"
+  relative_path=`realpath --relative-to="$SRC_DIR_PATH" "$path"`
+  output_path="$DST_DIR/$relative_path"
+  parent_dir="$(dirname "$output_path")"
+  mkdir -p $parent_dir
+  #echo $parent_dir
+  iconv -f $SRC_ENC -t $DST_ENC $path > $output_path
+}
+
+(cd $SRC_DIR_PATH; recursiverm)

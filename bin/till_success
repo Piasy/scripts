@@ -1,0 +1,19 @@
+#!/bin/sh
+
+CMD=$@
+
+echo "running \"$CMD\" till success..."
+
+COUNT=0
+FLG=1
+
+while [ $FLG -ne 0 ]
+do
+  echo "try $COUNT times..."
+  let "COUNT++"
+  $CMD
+  FLG=$?
+  sleep 3
+done
+
+echo "success after $COUNT times!"
