@@ -1,0 +1,6 @@
+#!/bin/sh
+
+scp aws-tokyo:/home/ubuntu/downloads/shadowsocks.reset.log ~/Downloads
+cd ~/Downloads
+python ~/src/scripts/bin/plot_fgfw_status.py
+rm shadowsocks.reset.log
